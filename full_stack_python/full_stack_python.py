@@ -1,4 +1,5 @@
 import reflex as rx
+from full_stack_python.components.navbar import navbar
 from rxconfig import config
 
 
@@ -19,10 +20,18 @@ class State(rx.State):
         self.color = "green"
 
 
+def base_page(child: rx.Component, *args, **kwargs) -> rx.Component:
+    return rx.container(
+        navbar(),
+        child,
+        rx.color_mode.button(position="bottom-right"),
+        rx.logo(),
+    )
+
+
 def index() -> rx.Component:
     # Welcome Page (Index)
-    return rx.container(
-        rx.color_mode.button(position="top-right"),
+    return base_page(
         rx.vstack(
             rx.heading(State.label, size="9"),
             rx.text(
@@ -44,7 +53,6 @@ def index() -> rx.Component:
             justify="center",
             min_height="85vh",
         ),
-        rx.logo(),
     )
 
 

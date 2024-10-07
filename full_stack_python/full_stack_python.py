@@ -1,5 +1,5 @@
 import reflex as rx
-from full_stack_python.components.navbar import navbar
+from full_stack_python.pages.base_page import base_page
 from rxconfig import config
 
 
@@ -18,15 +18,6 @@ class State(rx.State):
 
     def reset_color(self):
         self.color = "green"
-
-
-def base_page(child: rx.Component, *args, **kwargs) -> rx.Component:
-    return rx.container(
-        navbar(),
-        child,
-        rx.color_mode.button(position="bottom-right"),
-        rx.logo(),
-    )
 
 
 def index() -> rx.Component:

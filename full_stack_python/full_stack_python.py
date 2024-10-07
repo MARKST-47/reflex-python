@@ -1,5 +1,6 @@
 import reflex as rx
 from full_stack_python.pages.base_page import base_page
+from . import pages
 from rxconfig import config
 
 
@@ -42,6 +43,8 @@ def index() -> rx.Component:
             ),
             spacing="5",
             justify="center",
+            text_align="center",
+            align="center",
             min_height="85vh",
         ),
     )
@@ -50,3 +53,5 @@ def index() -> rx.Component:
 app = rx.App()
 
 app.add_page(index)
+app.add_page(pages.about_page, route="/about")
+app.add_page(pages.pricing_page, route="/pricing")

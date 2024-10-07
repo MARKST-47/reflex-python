@@ -23,7 +23,7 @@ def navbar() -> rx.Component:
                     navbar_link("Home", "/#"),
                     navbar_link("About", "/about"),
                     navbar_link("Pricing", "/pricing"),
-                    navbar_link("Contact", "/#"),
+                    navbar_link("Contact", "/contact"),
                     spacing="5",
                 ),
                 rx.hstack(
@@ -56,13 +56,13 @@ def navbar() -> rx.Component:
                 rx.menu.root(
                     rx.menu.trigger(rx.icon("menu", size=30)),
                     rx.menu.content(
-                        rx.menu.item("Home"),
-                        rx.menu.item("About"),
-                        rx.menu.item("Pricing"),
-                        rx.menu.item("Contact"),
+                        rx.menu.item("Home", on_click=rx.redirect("/#")),
+                        rx.menu.item("About", on_click=rx.redirect("/about")),
+                        rx.menu.item("Pricing", on_click=rx.redirect("/pricing")),
+                        rx.menu.item("Contact", on_click=rx.redirect("/contact")),
                         rx.menu.separator(),
-                        rx.menu.item("Log in"),
-                        rx.menu.item("Sign up"),
+                        rx.menu.item("Log in", on_click=rx.redirect("/#")),
+                        rx.menu.item("Sign up", on_click=rx.redirect("/#")),
                     ),
                     justify="end",
                 ),

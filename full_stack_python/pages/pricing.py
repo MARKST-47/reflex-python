@@ -4,7 +4,7 @@ from .base_page import base_page
 def pricing_page() -> rx.Component:
     return base_page(
         rx.vstack(
-            rx.heading("Pricing", size="9", style={"text-decoration": "underline"}),
+            rx.heading("Pricing", size="9"),
             rx.table.root(
                 rx.table.header(
                     rx.table.row(

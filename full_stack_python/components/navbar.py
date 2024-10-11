@@ -31,8 +31,13 @@ def navbar() -> rx.Component:
                         "Sign Up",
                         size="3",
                         variant="outline",
+                        on_click=rx.redirect("/signup")
                     ),
-                    rx.button("Log In", size="3"),
+                    rx.button(
+                        "Log In",
+                        size="3",
+                        on_click=rx.redirect("/login")
+                    ),
                     spacing="4",
                     justify="end",
                 ),
@@ -61,8 +66,8 @@ def navbar() -> rx.Component:
                         rx.menu.item("Pricing", on_click=rx.redirect("/pricing")),
                         rx.menu.item("Contact", on_click=rx.redirect("/contact")),
                         rx.menu.separator(),
-                        rx.menu.item("Log in", on_click=rx.redirect("/#")),
-                        rx.menu.item("Sign up", on_click=rx.redirect("/#")),
+                        rx.menu.item("Log in", on_click=rx.redirect("/login")),
+                        rx.menu.item("Sign up", on_click=rx.redirect("/signup")),
                     ),
                     justify="end",
                 ),

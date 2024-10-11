@@ -1,6 +1,6 @@
 import reflex as rx
-from full_stack_python.pages.base_page import base_page
 from . import pages
+from .pages.base_page import base_page
 from rxconfig import config
 
 
@@ -56,3 +56,4 @@ app.add_page(index)
 app.add_page(pages.about_page, route="/about")
 app.add_page(pages.pricing_page, route="/pricing")
 app.add_page(pages.contact_page, route="/contact")
+app.add_page(pages.todo_page, route="/todo")
